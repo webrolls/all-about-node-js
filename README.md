@@ -74,28 +74,31 @@ var greet = function () {
 }
 
 module.exports = greet;
-<pre>
+</pre>
 
 
 HOW DOES MODULES IN NODE WORKS ?????
 
 when we use require node method what actually happens ??? this is the reason why the function and variable in required files are not available in global scope. 
 
+<pre>
 var greet = require('./greet.js');
-
+</pre>
 1- wraps the containt of the file in
 
+<pre>
 (function(exports, require, module, __filenmae, __dirname) {
 });
-
+</pre>
 2- run the code using . apply(params...)
 
+<pre>
 fn(module.exports, require, module, filename, dirname);
-
+</pre>
 3- return the module.exports;
-
+<pre>
 return module.exports;
-
+</pre>
 
 
 
