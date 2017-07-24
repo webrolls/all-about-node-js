@@ -107,17 +107,25 @@ do exmaple
 
 
 // Greet 01
+<pre>
 module.exports = function() {
 	console.log('Hello world');
 };
 
+</pre>
+
 // Greet 02
+<pre>
+
 module.exports.greet = function() {
 	console.log('Hello world!');
 };
+</pre>
 
 
 // Greet 03
+<pre>
+
 function Greetr() {
 	this.greeting = 'Hello world!!';
 	this.greet = function() {
@@ -127,8 +135,11 @@ function Greetr() {
 
 module.exports = new Greetr();
 
+</pre>
 
 // Greet 04
+<pre>
+
 function Greetr() {
 	this.greeting = 'Hello world!!!';
 	this.greet = function() {
@@ -138,8 +149,11 @@ function Greetr() {
 
 module.exports = Greetr;
 
+</pre>
 
 // Greet 05
+<pre>
+
 var greeting = 'Hello world!!!!';
 
 function greet() {
@@ -149,6 +163,8 @@ function greet() {
 module.exports = {
 	greet: greet
 }
+
+</pre>
 
 
 app.js
