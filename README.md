@@ -100,7 +100,80 @@ fn(module.exports, require, module, filename, dirname);
 return module.exports;
 </pre>
 
+Note: 
+when we requires a file in nodejs and that file does not exist nodejs will look for the folder with same name and pickup index.js in that folder.
 
+do exmaple 
+
+
+// Greet 01
+module.exports = function() {
+	console.log('Hello world');
+};
+
+// Greet 02
+module.exports.greet = function() {
+	console.log('Hello world!');
+};
+
+
+// Greet 03
+function Greetr() {
+	this.greeting = 'Hello world!!';
+	this.greet = function() {
+		console.log(this.greeting);
+	}
+}
+
+module.exports = new Greetr();
+
+
+// Greet 04
+function Greetr() {
+	this.greeting = 'Hello world!!!';
+	this.greet = function() {
+		console.log(this.greeting);
+	}
+}
+
+module.exports = Greetr;
+
+
+// Greet 05
+var greeting = 'Hello world!!!!';
+
+function greet() {
+	console.log(greeting);
+}
+
+module.exports = {
+	greet: greet
+}
+
+
+app.js
+
+<pre>
+var greet = require('./greet1');
+greet();
+
+var greet2 = require('./greet2').greet;
+greet2();
+
+var greet3 = require('./greet3');
+greet3.greet();
+greet3.greeting = 'Changed hello world!';
+
+var greet3b = require('./greet3');
+greet3b.greet();
+
+var Greet4 = require('./greet4');
+var grtr = new Greet4();
+grtr.greet();
+
+var greet5 = require('./greet5').greet;
+greet5();
+</pre>
 
 
 
