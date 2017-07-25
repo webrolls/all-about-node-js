@@ -205,10 +205,13 @@ var EventEmitter = require('events');
 var util = require('util');
 
 function Greetr() {
+	// 2. Line below is the way to add all properties and methods which are added to constructor function and not added via prototype
+	// like a super call
+	EventEmitter.call(this);
 	this.greeting = 'Hello world!';
 }
 
-//Following lines copies all prototype properties and methods from EventEmitter to Greetr, in another works Greetr no inherites EventEmitter
+//1. Following lines copies all prototype properties and methods from EventEmitter to Greetr, in another works Greetr no inherites EventEmitter
 util.inherits(Greetr, EventEmitter);
 
 Greetr.prototype.greet = function(data) {
