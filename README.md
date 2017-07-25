@@ -228,3 +228,12 @@ greeter1.on('greet', function(data) {
 greeter1.greet('Tony');
 </pre>
 
+
+Node does things asynchronous
+V8 does not.
+Javascript is synchronous
+
+All node asynchronous code hadled my libuv for more info visit libuv.org
+
+
+
