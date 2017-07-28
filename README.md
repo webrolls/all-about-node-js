@@ -236,4 +236,4 @@ Javascript is synchronous
 All node asynchronous code hadled my libuv for more info visit libuv.org
 
 
-
+<strong>try nodemon</strong> 
